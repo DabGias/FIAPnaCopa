@@ -7,8 +7,8 @@ import Login from "../components/Login"
 function MainRoutes() {
     return(
         <Routes>
-            <Route path="/" element={<Login/>}/>
-            <Route path="/home" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/figs-nacionais" element={<FigNac/>}/>
             <Route path="/figs-internacionais" element={<FigInternac/>}/>
         </Routes>

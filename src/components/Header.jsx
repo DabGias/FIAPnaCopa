@@ -1,21 +1,30 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
+const StyleTitulo = styled.h1 `
+    padding-top: 10px;
+    background-color: green;
+    text-align: center;
+
+    a {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        color: black;
+    }
+`
+
 const StyleHeader = styled.header `
     background-color: green;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-        width: 14%;
-        text-align: left;
-    }
-
     ul {
+        margin-left: 20px;
         list-style: none;
         display: flex;
-        justify-content: space-betwenn;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     ul li {
@@ -28,16 +37,33 @@ const StyleHeader = styled.header `
         text-decoration: none;
     }
 
-    button {
+    #logar {
         font-family: 'Montserrat', sans-serif;
         width: 10%;
-        margin: 20px 20px;
+        margin: 20px;
         padding: 10px;
         border-radius: 10px;
         transition: 150ms;
     }
 
-    button:hover {
+    #logar:hover {
+        cursor: pointer;
+        color: white;
+        background-color: #002bff;
+    box-shadow: 0 0 20px #002bff;
+        transition: 150ms;
+    }
+
+    #sair {
+        font-family: 'Montserrat', sans-serif;
+        width: 10%;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 150ms;
+    }
+
+    #sair:hover {
         cursor: pointer;
         color: white;
         background-color: #ff2424;
@@ -46,21 +72,31 @@ const StyleHeader = styled.header `
     }
 `
 
+const usuario = sessionStorage.getItem("usuario-logado")
+
 function Header() {
+    function logar() {
+        window.location = "/login"
+    }
+
+    function sair() {
+        sessionStorage.removeItem("usuario-logado")
+        window.location = "/"
+    }
+
     return(
         <>
+            <StyleTitulo><Link to={"/"}>⚽ FIAP na COPA 🌎</Link></StyleTitulo>
             <StyleHeader>
-                <h1><Link to={"/home"}>FIAP na COPA</Link></h1>
-
                 <nav>
                     <ul>
-                        <li><Link to={"/home"}>Home</Link></li>
+                        <li><Link to={"/"}>Home</Link></li>
                         <li><Link to={"/figs-nacionais"}>Figs. Nacionais</Link></li>
                         <li><Link to={"/figs-internacionais"}>Figs. Internacionais</Link></li>
                     </ul>
                 </nav>
 
-                <button>Sair</button>
+                {usuario === null ? <button id="logar" onClick={logar}>Logar</button> : <button id="sair" onClick={sair}>Sair</button>}
             </StyleHeader>
         </>
     )

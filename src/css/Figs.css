@@ -1,0 +1,45 @@
+.msg {
+    padding: 20px;
+    text-align: center;
+    width: 40%;
+    margin: 20px auto;
+    background-color: green;
+    border-radius: 20px;
+}
+
+.msg h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 60, 255);
+}
+
+.msg h1 p {
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    color: yellow;
+}
+
+.figs {
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.fig {
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #c1c1c1;
+    margin: 20px;
+}
+
+.fig img {
+    border-radius: 20px;
+}
+
+.fig p {
+    width: 50%;
+    margin: 20px auto;
+    font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,25 @@
+.mainHome {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.mainHome h1 {
+    text-align: center;
+}
+
+.mainHome h3 {
+    width: 50%;
+    margin: 10px auto;
+    font-style: italic;
+    text-align: center;
+}
+
+.mainHome section {
+    margin: 20px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+.mainHome section p {
+    margin-bottom: 10px;
+}
